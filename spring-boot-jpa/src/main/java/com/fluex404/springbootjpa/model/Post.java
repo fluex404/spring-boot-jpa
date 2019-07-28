@@ -10,6 +10,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name="posts")
@@ -46,7 +49,7 @@ public class Post extends AuditModel{
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+	
 	public String getDescription() {
 		return description;
 	}
