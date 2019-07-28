@@ -2,6 +2,7 @@ package com.fluex404.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,20 +15,22 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String firstName;
-	private String lastName;
-	private Date created_date;
+	@Column(name = "first_name")
+	private String firstname;
+	@Column(name = "last_name")
+	private String lastname;
+	@Column(name = "created_date")
+	private Date createddate;
 	private Integer age;
 	private Integer active;
 	
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
-	public User(String firstName, String lastName, Date created_date, Integer age, Integer active) {
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.created_date = created_date;
+	public User(String firstname, String lastname, Integer age, Integer active) {
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.createddate = new Date();
 		this.age = age;
 		this.active = active;
 	}
@@ -37,23 +40,26 @@ public class User {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+	
+	
+	public String getFirstname() {
+		return firstname;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
-	public Date getCreated_date() {
-		return created_date;
+	
+	public Date getCreateddate() {
+		return createddate;
 	}
-	public void setCreated_date(Date created_date) {
-		this.created_date = created_date;
+	public void setCreateddate(Date createddate) {
+		this.createddate = createddate;
 	}
 	public Integer getAge() {
 		return age;
@@ -66,6 +72,11 @@ public class User {
 	}
 	public void setActive(Integer active) {
 		this.active = active;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstname + ", lastName=" + lastname + ", created_date="
+				+ createddate + ", age=" + age + ", active=" + active + "]";
 	}
 	
 }
