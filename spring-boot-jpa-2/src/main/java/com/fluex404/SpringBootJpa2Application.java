@@ -100,7 +100,7 @@ public class SpringBootJpa2Application {
 		
 		result = bookRepository.findAllByTitleQuer("C");
 		
-		result.forEach(b -> System.out.println(b.getAthor()));
+		result.forEach(b -> System.out.println(b.getTitle()));
 		
 	}
 
