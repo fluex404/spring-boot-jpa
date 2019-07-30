@@ -96,12 +96,14 @@ public class SpringBootJpa2Application {
 //		result.forEach(b -> System.out.println(b.getAthor()));
 		
 		/* Query Parameter with @Param */
-		List<Book> result = new ArrayList<>();
+//		List<Book> result = new ArrayList<>();
+//		
+//		result = bookRepository.findAllByTitleQuer("C");
+//		
+//		result.forEach(b -> System.out.println(b.getTitle()));
 		
-		result = bookRepository.findAllByTitleQuer("C");
-		
-		result.forEach(b -> System.out.println(b.getTitle()));
-		
+		/* transient */
+		bookRepository.findAll().forEach(System.out::println);
 	}
 
 }
