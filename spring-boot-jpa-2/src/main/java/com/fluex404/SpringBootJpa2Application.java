@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.fluex404.model.Book;
 import com.fluex404.repository.BookBorrowRepository;
 import com.fluex404.repository.BookRepository;
 import com.fluex404.repository.UserRepository;
@@ -80,13 +81,21 @@ public class SpringBootJpa2Application {
 //		userRepository.findByFirstnameIgnoreCase("Isa").forEach(user -> System.out.println(user));
 		
 		/* Query */
-		List<?> result = new ArrayList<>();
+//		List<?> result = new ArrayList<>();
+//		
+//		result = bookBorrowRepository.findAllByQuery();
+//		
+//		for(Object object : result) {
+//			Object d[] = (Object[]) object;
+//		}
 		
-		result = bookBorrowRepository.findAllByQuery();
+//		List<Book> result = new ArrayList<>();
+//		
+//		result = bookRepository.findAllByQuery();
+//		
+//		result.forEach(b -> System.out.println(b.getAthor()));
 		
-		for(Object object : result) {
-			Object d[] = (Object[]) object;
-		}
+		
 		
 	}
 
