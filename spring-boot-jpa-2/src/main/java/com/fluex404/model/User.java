@@ -7,10 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.QueryHint;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
+
+@NamedNativeQuery(name = "User.getAllUser", 
+			query = "select u.*, (u.active * 3) as result from users u"
+		)
+
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

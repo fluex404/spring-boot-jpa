@@ -30,5 +30,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	List<User> findByActiveTrue();
 	List<User> findByActiveFalse();
 	List<User> findByFirstnameIgnoreCase(String firstname);
-
 }

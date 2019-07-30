@@ -1,12 +1,12 @@
 package com.fluex404;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.fluex404.model.User;
 import com.fluex404.repository.BookBorrowRepository;
 import com.fluex404.repository.BookRepository;
 import com.fluex404.repository.UserRepository;
@@ -78,6 +78,15 @@ public class SpringBootJpa2Application {
 //		userRepository.findByFirstnameContaining("e").forEach(user -> System.out.println(user));
 //		userRepository.findByAgeIn(Arrays.asList(17, 21)).forEach(user -> System.out.println(user));
 //		userRepository.findByFirstnameIgnoreCase("Isa").forEach(user -> System.out.println(user));
+		
+		/* Query */
+		List<?> result = new ArrayList<>();
+		
+		result = bookBorrowRepository.findAllByQuery();
+		
+		for(Object object : result) {
+			Object d[] = (Object[]) object;
+		}
 		
 	}
 
