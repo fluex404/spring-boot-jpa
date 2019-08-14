@@ -103,7 +103,8 @@ public class SpringBootJpa2Application {
 //		result.forEach(b -> System.out.println(b.getTitle()));
 		
 		/* transient */
-		bookRepository.findAll().forEach(System.out::println);
+//		bookRepository.findAll().forEach(System.out::println);
+		
 	}
 
 }
